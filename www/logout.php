@@ -1,0 +1,20 @@
+<?php
+//登录出的执行程序
+    //开启session
+    session_start();
+	$qc=isset($_GET["qc"])?$_GET["qc"]:"";
+	if($qc==1){
+		if($_COOKIE["wang"]!==null){
+			setcookie("wang","");
+		}
+		if($_COOKIE["mima"]!==null){
+			setcookie("mima","");
+		}
+	}
+    //撤销session
+    session_unset();
+    session_destroy();
+    //跳转到login.php
+	
+    header("Location:login.php");
+?>
